@@ -4,6 +4,7 @@ Repository to generate Modulo 256 checksums.
 Here's some code to test the checksum generator:
 
 ```javascript
+var modulo256Checksum = require('./modulo256.checksum.js');
 var msgs = [];
  
 msgs.push({str: '1H|\\^&|||ACCESS^511550|||||LIS||P|1|20161028161600' + String.fromCharCode(13)+ String.fromCharCode(3), c1: '2', c2: '1'}); // should result in ascii [c1]=2 and [c2]=1
@@ -32,7 +33,7 @@ for(var i = 0; i < msgs.length; i++) {
     var msg = msgs[i];
     console.log('');
     console.log(msg.str);
-    var checksum = calcChecksum(msg.str);
+    var checksum = modulo256Checksum.generateModulo256Checksum(msg.str);
     console.log('checksum: ' + checksum + ' expected checksum: ' + msg.c1 + msg.c2);
 }
 ```
