@@ -3,6 +3,7 @@ Repository to generate Modulo 256 checksums.
 
 Here's some code to test the checksum generator:
 
+```javascript
 var msgs = [];
  
 msgs.push({str: '1H|\\^&|||ACCESS^511550|||||LIS||P|1|20161028161600' + String.fromCharCode(13)+ String.fromCharCode(3), c1: '2', c2: '1'}); // should result in ascii [c1]=2 and [c2]=1
@@ -34,3 +35,4 @@ for(var i = 0; i < msgs.length; i++) {
     var checksum = calcChecksum(msg.str);
     console.log('checksum: ' + checksum + ' expected checksum: ' + msg.c1 + msg.c2);
 }
+```
